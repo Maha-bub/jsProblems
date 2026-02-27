@@ -19,3 +19,12 @@ function kiloToMile(mile){
 }
 let kilo =kiloToMile(2);
 console.log(kilo);
+
+// inch to feel task two
+function inchToFeet (inch){
+    const feet =inch/12;
+    return feet;
+}
+
+const myHeight = inchToFeet(71);
+console.log(myHeight);
