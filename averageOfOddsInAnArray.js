@@ -1,20 +1,17 @@
 function averageOfOdds(numbers) {
   let sum = 0;
-  let oddsNum=0;
+  let oddsNum=[];
   for (const num of numbers) {
-    if (num % 2 === 0) {
-      sum = sum + num;
-      oddsNum++;
-      
+    if (num % 2 === 1) {
+      oddsNum.push(num);
+         
     }
     
 
-  }
-  return sum;
+  }console.log(oddsNum);
+ 
 
 }
 
 const numbers = [12, 13, 25, 41, 42];
 const sumOfOdds = averageOfOdds(numbers);
-let average = sumOfOdds/oddsNum;
-console.log(average);
