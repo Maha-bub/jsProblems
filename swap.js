@@ -3,4 +3,4 @@ let b=7;
 
 [a,b]=[b,a]
 
-console.log(a,b)
+console.log(a,b);
