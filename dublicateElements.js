@@ -17,3 +17,15 @@ function eniquePerson(array){
 const unique = eniquePerson(public);
 console.log("Unique number of every single person is:",unique.length);
 console.log(unique);
+
+function dublicateElements(elements){
+    let only = [];
+    for(const unique of elements){
+        if(only.includes(unique)== false){
+            only.push(unique);
+        }
+    }return only;
+}
+
+const uniqueElements = dublicateElements(public);
+console.log(uniqueElements);
