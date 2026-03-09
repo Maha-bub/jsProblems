@@ -30,3 +30,10 @@ let squareNumber = numbers.map(function(x){
     return x*x;
 })
 console.log(squareNumber);
+
+
+var numbersArr=[5,54,10,47,8,12,9,54,5];
+const bignum=numbersArr.filter(function(x){
+    return x>10;
+})
+console.log(bignum);
