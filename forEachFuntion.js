@@ -15,3 +15,18 @@ arr.forEach(function(x,index,arr){
     arr[index]=x+5;
 })
 console.log(arr);
+var newarr =[]; 
+var numbers=[12,47,14,12,13,14,15,];
+
+numbers.forEach(function(x){
+    newarr.push(x*x);
+})
+
+// console.log(newarr);
+
+// map function
+
+let squareNumber = numbers.map(function(x){
+    return x*x;
+})
+console.log(squareNumber);
