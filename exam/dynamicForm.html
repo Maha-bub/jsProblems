@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend><h1>Register</h1></legend>
+    
+    <form id="dynamicForm" id="form" name="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        <div>
+            <label for="name">Course:</label>
+            CSE<input type="checkbox" value="CSE" name="chkSubject" />
+            EEE<input type="checkbox" value="EEE" name="chkSubject" />      
+            BBA<input type="checkbox" value="BBA" name="chkSubject" />
+        </div>
+        
+        <button onclick="newTab()" type="submit">Submit</button>
+    </form>
+    </fieldset>
+
+    <script>
+       function newTab(){
+        // name field validation
+        var name=document.form.name.value;
+        if(name==""){
+            alert("Please Enter Your Name.");
+
+        }
+
+        // Email field validation
+        var email=document.form.email.value;{
+            if(email===''){
+                alert("Please Enter Your Email.");
+                return false;
+            }
+            else if(email.indexOf("@")==-1 || email.indexOf(".")===-1){
+                alert("Please Enter a valid Email.");
+                return false ;           }
+            }
+        }
+
+        // Course Checkbox validation
+        var course=document.form.course.value;
+
+
+        newTab=window.open("","", "width=500px, height=500px");
+        newTab.document.writeln("Name:"+name+"<br>");
+        newTab.document.writeln("Email:"+email+"<br>");     
+        newTab.document.writeln("Course:"+course+"<br>");
+        newTab.document.writeln("<input type='button' value='Close me' onclick='self.close();' />");    
+        newTab.document.writeln("<input type='button' value='Print me' onclick='self.print();' />");
+
+        
+        
+        
+    </script>
+</body>
+</html>
