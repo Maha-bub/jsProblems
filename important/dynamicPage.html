@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>F</title>
+</head>
+
+<body>
+    <h1 style="align-items: center; justify-content: center; text-align: center; margin-top: 20px;" class="">Student
+        Information Form</h1>
+
+    <div class="container">
+
+        <form name="form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" name="name" class="form-label">Name:</label>
+                <input type="text" name="name" class="form-control" id="exampleInputText">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address:</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
+
+            </div>
+
+            <!--Gender check box -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" name="Course" class="form-label">Course:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Course" value="HTML" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        HTML
+                    </label>
+
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Course" value="JavaScript"
+                        id="flexCheckDefault">
+                    <label class="form-check-label" name="Course" for="flexCheckDefault">
+                        JavaScript
+                    </label>
+
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Course" value="PHP" id="flexCheckChecked"
+                        checked>
+                    <label class="form-check-label" name="Course" for="flexCheckDefault">
+                        PHP
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Gender:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" value="Male" id="flexRadioDefault1">
+                    <label class="form-check-label" name="gender" for="flexRadioDefault1">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" value="Female" id="flexRadioDefault2"
+                        checked>
+                    <label class="form-check-label" name="gender" for="flexRadioDefault2">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Depertment:</label>
+                <select class="form-select" name="option" aria-label="Default select example">
+                    <option name="option" selected>Select Your Depertment</option>
+                    <option name="option" value="CSE">CSE</option>
+                    <option name="option" value="EEE">EEE</option>
+                    <option name="option" value="BBA">BBA</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="newWindow()">Submit</button>
+        </form>
+    </div>
+
+    <!-- javascript part -->
+    <script>
+        function newWindow() {
+
+
+            // name validation
+            let name = document.form.name.value;
+            if (name == "") {
+                alert("Name is required")
+                return false;
+            }
+            else if (name.length < 4 || name.length > 8) {
+                alert("Name must be minimum 4 charecter and maximum 8 charecter.")
+                return false;
+            }
+
+            // email validation
+            let email = document.form.email.value;
+            if (email == "") {
+                alert("Email is required")
+            }
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Please Write a valid email");
+                return false;
+            }
+            // checkbox
+
+            let Gender = "";
+            for (i = 0; i < document.form.gender.length; i++) {
+                if (document.form.gender[i].checked) {
+                    Gender = document.form.gender[i].value;
+                }
+            }
+
+            let Course = "";
+            for (j = 0; j < document.form.Course.length; j++) {
+                if (document.form.Course[j].checked) {
+                    Course += document.form.Course[j].value;
+                }
+            }
+
+        let newWindows = window.open("", "", 'width=400px,height=400px')
+            newWindows.document.write("Name: " + name + "<br>")
+            newWindows.document.write("Email: " + email + "<br>")
+            newWindows.document.write("Department: " + Course + "<br>")
+            newWindows.document.write("Gender: " + Gender + "<br>")
+            newWindows.document.write("<input type='button' value='Close me' onclick='self.close();' />");
+            newWindows.document.write("<input type='button' value='Close me' onclick='self.print();' />");
+        }
+
+
+    </script>
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

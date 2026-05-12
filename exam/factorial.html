@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factoril check</title>
+</head>
+
+<body>
+    <script>
+        let number = parseInt(prompt("Enter a number:"));
+        let factorial = 1;
+        if (number < 0) {
+            document.writeln("This is a negative number, this number does not have factorial.Please enter a positive Number");
+        }
+        else {
+            for (let i = 1; i <= number; i++) {
+                factorial = factorial * i;
+            }
+            document.writeln("Factorial of this number is = " + factorial);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form open in new window</title>
+</head>
+
+<body>
+    <form action="#" name="form"
+        style="width:30%; border-radius: 10px; margin:0px auto; border: 2px solid rgb(64, 94, 105);background: #e0e685c1; padding:10px">
+
+        <div>Name<br />
+
+            <input type="text" name="Text" />
+        </div>
+        <br><br>
+
+        <div>Email<br />
+            <textarea name="email"></textarea>
+        </div>
+        <br><br>
+
+        
+
+        <div>Courses:
+            <select name="option" id="">
+                <option name="option" value="HTML">BBA</option>
+                <option name="option" value="CSS">MBA</option>
+                <option name="option" value="JavaScript">CIS</option>
+                <option name="option" value="PHP">EEE</option>
+                <option name="option" value="Laravel">Laravel</option>
+            </select>
+
+        </div>
+        <br>
+
+        <div>
+            <div>Gender:
+                Male<input type="radio" name="gender" value="Male" />
+                Female<input type="radio" name="gender" value="Female" />
+            </div>
+        </div>
+        <div>Depeartment:
+            CSE<input type="checkbox" value="CSE" name="chkSubject" />
+            EEE<input type="checkbox" value="EEE" name="chkSubject" />
+            BBA<input type="checkbox" value="BBA" name="chkSubject" />
+        </div>
+        <br>
+
+        <input type="button" onclick="newWindow()" value="Submit" />
+
+
+
+
+
+    </form>
+    <script language="javascript">
+        function newWindow() {
+            var name = document.form.Text.value;
+            if (name == "") {
+                alert("Please fill-up name field")
+            }
+           
+
+
+          
+
+            // email validation
+            var email = document.form.email.value;
+            let Courses = document.form.option.value;
+            if (email == "") {
+                alert("Email required");
+                return false;
+            }
+
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Invalid Email");
+                return false;
+            }
+
+
+
+
+
+            // cheked for gender elements
+            var Gender = "";
+            for (i = 0; i < document.form.gender.length; i++) {
+                if (document.form.gender[i].checked) {
+                    Gender = document.form.gender[i].value;
+                }
+
+            }
+
+            // subject value checked and store data in another window
+            let Depeartment = " ";
+            for (j = 0; j < document.form.chkSubject.length; j++) {
+
+                if (document.form.chkSubject[j].checked) {
+                    Depeartment += document.form.chkSubject[j].value + ", ";
+                }
+            }
+            doc = window.open("", "", 'width=400px,height=400px',);
+            doc.document.write("Name:" + name + "<br>")
+            doc.document.write("Email:" + email + "<br>")
+            doc.document.write("Course:" + Courses + "<br>")
+            doc.document.write("Gender:" + Gender + "<br>")
+            doc.document.write("Subject:" + Depeartment + "<br/>");
+
+
+
+
+        };
+
+
+    </script>
+</body>
+
+</html>

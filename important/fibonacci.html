@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finonacci Series</title>
+</head>
+
+<body>
+    <script>
+        let number = parseInt(prompt("Enter the number of terms:"));
+        let num1 = 0, num2 = 1, nextNum;
+        document.writeln("Fibonacci Series: <br>");
+        document.writeln(num1 + "+" + num2);
+        let sumOfFactorial = num1 + num2;
+
+
+
+        for (let i = 1; i <= number; i++) {
+
+            nextNum = num1 + num2;
+            num1 = num2;
+            num2 = nextNum;
+            document.writeln("+" + nextNum);
+            sumOfFactorial += nextNum;
+
+
+
+        }
+        document.writeln("<br>Sum of Fibonacci Series: " + sumOfFactorial);
+    </script>
+    <br>
+    <script>
+        let n = parseInt(prompt("Enter a number :"));
+        let factorial = 1;
+        if (n < 0) {
+            document.write("This is a negative number, Please enter a positive number");
+
+        }
+        else {
+            for (let i = 1; i <= n; i++) {
+                factorial = factorial * i;
+
+            }
+            document.writeln("Factorial of this number is =" + factorial);
+        }
+    </script>
+</body>
+
+</html>
