@@ -1,4 +1,9 @@
 function countSteps(steps) {
+    if(Array.isArray(steps)==false){
+        return "invalid";
+
+    }
+       
     let stepsTotal = 0;
     let updatetracker = {
         totalStep: 0,
@@ -21,6 +26,7 @@ function countSteps(steps) {
 
 
 
-const stepsOfArray = [8540, 4521, 10001, 8709,10,20000, 800];
+// const stepsOfArray = [8540, 4521, 10001, 8709,10,20000, 800];
+const stepsOfArray ='lkhjfdhfjg';
 const result = countSteps(stepsOfArray);
 console.log(result);
