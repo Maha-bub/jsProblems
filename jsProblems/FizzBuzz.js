@@ -14,3 +14,6 @@ function fizzBuzz(num) {
 }
 
 console.log(fizzBuzz(7));
+console.log(fizzBuzz(72));
+console.log(fizzBuzz(27));
+console.log(fizzBuzz(15));
