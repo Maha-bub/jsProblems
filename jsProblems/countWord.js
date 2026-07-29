@@ -5,3 +5,5 @@ function countWord(str){
 }
 
 console.log(countWord(`Hi, This is Mahabub Alam`))
+console.log(countWord(`Hi, This is Mahabub Alam`))
+console.log(countWord(`Hi, This is Mahabub Alam  I'm currently work as a jr. Laravel developer`))
