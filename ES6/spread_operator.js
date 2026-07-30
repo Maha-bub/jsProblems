@@ -3,3 +3,13 @@ const spreadOperator=[...arr]
 console.log(spreadOperator)
 console.log(Math.min(...arr))
 console.log(Math.max(...arr))
+
+
+const identity={
+    name:'mahabub',
+    age:23,
+    address:'Jaldhaka'
+}
+
+const identityCp={...identity,class:10}
+console.log(identityCp);
