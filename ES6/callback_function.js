@@ -1,3 +1,5 @@
+
+//when a function agrument aslo a function its call callback functions
 function userIdentity(cp) {
     console.log(cp());
     return cp();
