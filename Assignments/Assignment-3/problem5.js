@@ -1,5 +1,5 @@
 function generateLeaderboard(students) {
-    if (!Array.isArray(students) || students.length === 0 || !students.every(student => 'score' in student) && typeof student.score !== 'number') {
+    if (!Array.isArray(students) || students.length === 0 || !students.every(student => 'score' in student && typeof student.score == 'number')) {
         return "Invalid";
     }
 
@@ -26,7 +26,7 @@ function generateLeaderboard(students) {
 
 
 
-console.log(generateLeaderboard([{ name: "Rafi" }]))
+console.log(generateLeaderboard([{ name: "Rafi", score: "90" }]))
 
 // console.log([])
 // console.log("students")
