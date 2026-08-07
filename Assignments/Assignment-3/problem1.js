@@ -1,10 +1,6 @@
-// function studentIntroduction(student) {
-//     // Write your code here
-// }
-
-
 const studentIntroduction = (student) => {
-    if (typeof (student) != 'object') {
+
+    if (typeof (student) != 'object' || Object.keys(student).length === 0) {
         return "Invalid";
     }
     const { name, age, course } = student
@@ -17,3 +13,6 @@ let studentInfo = {
 }
 
 console.log(studentIntroduction(studentInfo))
+console.log(studentIntroduction({}))
+console.log(studentIntroduction('studentInfo'))
+console.log(studentIntroduction(10))
