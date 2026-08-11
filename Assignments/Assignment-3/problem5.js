@@ -9,11 +9,11 @@ function generateLeaderboard(students) {
         }
     });
 
-    const names = qualified.map(name => {
-        return name.name.toUpperCase();
+    const names = qualified.map(student => {
+        return student.name.toUpperCase();
     });
 
-    return names;
+    return names.slice(0, 3);;
 }
 
 
