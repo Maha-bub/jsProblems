@@ -1,6 +1,6 @@
 const studentIntroduction = (student) => {
 
-    if (typeof (student) != 'object' || Object.keys(student).length === 0 || !('name' in student) || !('name' in student) || !('course' in student)) {
+    if (typeof (student) != 'object' || Object.keys(student).length === 0 || !('name' in student) || !('age' in student) || !('course' in student)) {
         return "Invalid";
     }
     const { name, age, course } = student
