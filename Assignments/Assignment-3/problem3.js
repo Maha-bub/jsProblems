@@ -1,21 +1,25 @@
 
 const countHashtags = (caption) => {
-    // console.log(caption)
-    const captionWordArray = caption.split(" ");
-    // console.log(captionWordArray)
+    if (typeof caption !== 'string') {
+        return "Invalid";
+    }
+    const captionWords = caption.split(" ");
+
     let hasTagCount = 0;
     let longestTag = '';
-    for (let hasTag of captionWordArray) {
+    for (let hasTag of captionWords) {
         if (hasTag.startsWith('#')) {
             hasTagCount++;
-            if (hasTag.length > longestTag) {
-                longestTag = hasTag;
+
+            const tagWithOutHas = hasTag.slice(1);
+            if (tagWithOutHas.length > longestTag) {
+                longestTag = tagWithOutHas;
             }
         }
 
     }
-    // console.log(hasTagCount)
-    return hasTagCount, longestTag;
+
+    return { hasTagCount, longestTag };
 
 }
 let captions = "Loving this weather today #sunny #vibes #weekend";

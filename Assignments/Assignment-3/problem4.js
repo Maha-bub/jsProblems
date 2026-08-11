@@ -1,5 +1,9 @@
 const bonusScore = (scores) => {
-    if (!Array.isArray(scores) ? "Invalid" : scores.length === 0 ? "Invalid" : !scores.every(element => typeof element === 'number') ? "Invalid" : scores);
+    if (!Array.isArray(scores) || scores.length === 0 || !scores.every(element => typeof element === 'number')) {
+        return "Invalid"
+    }
+
+
 
     let updatedScore = scores.map(score => {
         return score + 10;
