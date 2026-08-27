@@ -3,9 +3,15 @@ console.log(2)
 console.log(3)
 console.log(4)
 setTimeout(() => {
-    console.log(3)
+    setTimeout(() => { add(2, 2), 5000 });
+    console.log('B')
 
 }, 2000);
-console.log(5)
-console.log(6)
-console.log(7)
+function add(a, b) {
+    distructor(3, 2)
+    console.log(a + b);
+}
+
+function distructor(a, x) {
+    console.log(a - x);
+}
